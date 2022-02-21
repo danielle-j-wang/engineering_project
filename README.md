@@ -7,9 +7,17 @@ The goal of this project was to build an app to visulizing heart disease mortali
 * data was collected from Data.gov
 
 ## Workflow
-* EDA in Python
-* data analysis in SQL
-* data visualization in Python (seaborn, matplotlib)
+
+```mermaid
+flowchart LR
+    A["Load Data"]  -->  
+    B["Data Preprocessing"]   <--> 
+    C["Data Visualization"] -->
+    D["Streamlit app"]
+```
+* data storage in SQL
+* data preprocessing using Python (pandas, numpy)
+* data visualization using Python (seaborn, matplotlib)
 * deploy a Streamlit app
 
 ## Deliverables
