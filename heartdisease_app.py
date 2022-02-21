@@ -21,7 +21,7 @@ st.markdown("""
 
 ### Data Preprocessing
 
-data = pd.read_csv('Data/Heart_Disease_Mortality.csv')
+data = pd.read_csv('Heart_Disease_Mortality.csv')
     
 # columns - lower case and select a subset of columns
 data.columns = data.columns.str.lower()
