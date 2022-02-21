@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import streamlit as st
+from sqlalchemy import create_engine
 from PIL import Image
 
 ## navigation bar
@@ -19,9 +20,23 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
-### Data Preprocessing
+# load data, and the potential to combine historical data
+def load_data():
+    file = pd.read_csv('Heart_Disease_Mortality.csv')
+    
+    return file
 
-data = pd.read_csv('Heart_Disease_Mortality.csv')
+file = load_data()
+
+engine = create_engine('sqlite:///heart.db')
+
+#create table for df in DB
+heart.to_sql('heart2016_2018', con=engine, if_exists='replace', index=False)
+
+data = pd.read_sql('SELECT * from heart2016_2018', engine)
+
+# OR read data directly from the CSV file
+# data = pd.read_csv('Heart_Disease_Mortality.csv')
     
 # columns - lower case and select a subset of columns
 data.columns = data.columns.str.lower()
