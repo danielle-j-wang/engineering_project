@@ -35,6 +35,8 @@ data = data[(data.county != 'Nation') & (data.county != 'State')]
 data.dropna(subset=['rate'], inplace=True)
 data = data[(data.gender != 'Overall')]
 data = data[(data.ethnicity != 'Overall')]
+data = data[~data.lat.isna()]
+data = data[~data.lon.isna()]
 
 # round the rate column to 2 decimal places
 data.round({'rate': 2})
