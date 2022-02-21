@@ -31,7 +31,7 @@ file = load_data()
 engine = create_engine('sqlite:///heart.db')
 
 #create table for df in DB
-heart.to_sql('heart2016_2018', con=engine, if_exists='replace', index=False)
+file.to_sql('heart2016_2018', con=engine, if_exists='replace', index=False)
 
 data = pd.read_sql('SELECT * from heart2016_2018', engine)
 
