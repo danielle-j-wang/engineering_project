@@ -26,6 +26,7 @@ def load_data():
     
     return file
 
+# list any additional files here
 file = load_data()
 
 engine = create_engine('sqlite:///heart.db')
@@ -242,9 +243,7 @@ st.write(
 ## Top 20 Mortality Rate
 ''')
 
-#show_table = st.checkbox('Show Top 20 Mortality Data', value=True)
-#df_20 = data.sort_values('rate', ascending=False).head(20)
-
+# show_table = st.checkbox('Show Top 20 Mortality Data', value=True)
 
 
 def highlight_col(x):
